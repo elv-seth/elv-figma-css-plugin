@@ -1,0 +1,8 @@
+{
+  "name": "Design to SCSS",
+  "id": "3",
+  "api": "1.0.0",
+  "main": "dist/code.js",
+  "ui": "dist/ui.html",
+  "editorType": ["figma", "figjam"]
+}
