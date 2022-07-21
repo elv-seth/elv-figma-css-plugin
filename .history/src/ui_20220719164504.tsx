@@ -44,20 +44,29 @@ function App() {
   const onCopy = () => {
         //copy to clipboard
     let outputString = "";
-    outputString += "--color-page-bg: " + dataRef.bg_page + "\n";
-    outputString += "--color-bg-primary: " + dataRef.bg_primary  + "\n";
-    outputString += "--color-bg-secondary: " + dataRef.bg_secondary + "\n";
-    outputString += "--background-page-header: " + dataRef.bg_page_header + "\n";
-    outputString += "--background-button-primary: " + dataRef.bg_button_primary + "\n";
-    outputString += "--color-text-primary: " + dataRef.text_primary + "\n";
-    outputString += "--color-text-secondary: " + dataRef.text_secondary+ "\n";
-    outputString += "--color-text-highlight: " + dataRef.text_highlight + "\n";
+    outputString += dataRef.bg_page + "\n";
+    outputString += dataRef.bg_primary  + "\n";
+    outputString += dataRef.bg_secondary + "\n";
+    outputString += dataRef.bg_page_header + "\n";
+    outputString += dataRef.bg_button_primary + "\n";
+    outputString += dataRef.text_primary + "\n";
+    outputString += dataRef.text_secondary+ "\n";
+    outputString += dataRef.text_highlight + "\n";
     console.log(outputString);
+    rgba(255,203.00000309944153,5.000000176951289,1)
+rgba(0,101.9999635219574,255,1)
+rgba(169.03198421001434,59.618162512779236,255,1)
+rgba(0,0,0,0.30000001192092896)
+rgba(255,8.500007092952728,67.66006618738174,1)
+rgba(255,255,255,1)
+rgba(0,0,0,1)
+rgba(7.182493340224028,2.1249979734420776,255,1)
+
 
     const area = document.createElement('textarea')
     document.body.appendChild(area)
     area.value = outputString
-   // area.focus()
+    area.focus()
     area.select()
     const result = document.execCommand('copy')
     document.body.removeChild(area)
@@ -65,28 +74,10 @@ function App() {
       throw new Error()
     }
     console.log('Copied with document.execCommand')
-    
   };
 
   const onExportStylesheet = () => {
     console.log("user wants to export this stylesheet to a .scss file");
-    let outputString = "";
-    outputString += "--color-page-bg: " + dataRef.bg_page + "\n";
-    outputString += "--color-bg-primary: " + dataRef.bg_primary  + "\n";
-    outputString += "--color-bg-secondary: " + dataRef.bg_secondary + "\n";
-    outputString += "--background-page-header: " + dataRef.bg_page_header + "\n";
-    outputString += "--background-button-primary: " + dataRef.bg_button_primary + "\n";
-    outputString += "--color-text-primary: " + dataRef.text_primary + "\n";
-    outputString += "--color-text-secondary: " + dataRef.text_secondary+ "\n";
-    outputString += "--color-text-highlight: " + dataRef.text_highlight + "\n";
-    const element = document.createElement("a");
-    const file = new Blob([outputString],{
-      type: "text/plain;charset=utf-8",
-    });
-    element.href = URL.createObjectURL(file);
-    element.download = "myDesign.scss";
-    document.body.appendChild(element);
-    element.click(); 
     //create and export to local .scss file
   }
 

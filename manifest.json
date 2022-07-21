@@ -1,5 +1,5 @@
 {
-  "name": "Design to SCSS",
+  "name": "Eluvio CSS Generator",
   "id": "3",
   "api": "1.0.0",
   "main": "dist/code.js",

@@ -84,9 +84,7 @@ function App() {
       type: "text/plain;charset=utf-8",
     });
     element.href = URL.createObjectURL(file);
-    element.download = "myDesign.scss";
-    document.body.appendChild(element);
-    element.click(); 
+    element.download()
     //create and export to local .scss file
   }
 

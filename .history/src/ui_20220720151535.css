@@ -1,5 +1,5 @@
 :root {
-  --color-bg: #131313;
+  --color-bg: #F;
   --color-bg-hover: var(--figma-color-bg-hover);
   --color-bg-active: var(--figma-color-bg-pressed);
   --color-border: var(--figma-color-border);
@@ -120,7 +120,7 @@ p {
 }
 
 div.stylesheet {
-  background: rgb(245,245,245);
+  background: rgb(13,13,13);
   height: 1000%;
   text-align:left;
   display: flex;

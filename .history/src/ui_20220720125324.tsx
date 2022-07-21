@@ -85,8 +85,7 @@ function App() {
     });
     element.href = URL.createObjectURL(file);
     element.download = "myDesign.scss";
-    document.body.appendChild(element);
-    element.click(); 
+    document.body.appendChild()
     //create and export to local .scss file
   }
 

@@ -82,11 +82,7 @@ function App() {
     const element = document.createElement("a");
     const file = new Blob([outputString],{
       type: "text/plain;charset=utf-8",
-    });
-    element.href = URL.createObjectURL(file);
-    element.download = "myDesign.scss";
-    document.body.appendChild(element);
-    element.click(); 
+    })
     //create and export to local .scss file
   }
 

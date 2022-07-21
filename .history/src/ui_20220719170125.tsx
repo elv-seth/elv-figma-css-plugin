@@ -70,23 +70,6 @@ function App() {
 
   const onExportStylesheet = () => {
     console.log("user wants to export this stylesheet to a .scss file");
-    let outputString = "";
-    outputString += "--color-page-bg: " + dataRef.bg_page + "\n";
-    outputString += "--color-bg-primary: " + dataRef.bg_primary  + "\n";
-    outputString += "--color-bg-secondary: " + dataRef.bg_secondary + "\n";
-    outputString += "--background-page-header: " + dataRef.bg_page_header + "\n";
-    outputString += "--background-button-primary: " + dataRef.bg_button_primary + "\n";
-    outputString += "--color-text-primary: " + dataRef.text_primary + "\n";
-    outputString += "--color-text-secondary: " + dataRef.text_secondary+ "\n";
-    outputString += "--color-text-highlight: " + dataRef.text_highlight + "\n";
-    const element = document.createElement("a");
-    const file = new Blob([outputString],{
-      type: "text/plain;charset=utf-8",
-    });
-    element.href = URL.createObjectURL(file);
-    element.download = "myDesign.scss";
-    document.body.appendChild(element);
-    element.click(); 
     //create and export to local .scss file
   }
 

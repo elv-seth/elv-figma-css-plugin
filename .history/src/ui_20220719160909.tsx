@@ -41,52 +41,18 @@ function App() {
     parent.postMessage({ pluginMessage: { type: "export" } }, "*");
   }
 
-  const onCopy = () => {
-        //copy to clipboard
+  const onCopy = (e) => {
+    console.log("user wants to copy styling to their clipboard");
     let outputString = "";
-    outputString += "--color-page-bg: " + dataRef.bg_page + "\n";
-    outputString += "--color-bg-primary: " + dataRef.bg_primary  + "\n";
-    outputString += "--color-bg-secondary: " + dataRef.bg_secondary + "\n";
-    outputString += "--background-page-header: " + dataRef.bg_page_header + "\n";
-    outputString += "--background-button-primary: " + dataRef.bg_button_primary + "\n";
-    outputString += "--color-text-primary: " + dataRef.text_primary + "\n";
-    outputString += "--color-text-secondary: " + dataRef.text_secondary+ "\n";
-    outputString += "--color-text-highlight: " + dataRef.text_highlight + "\n";
-    console.log(outputString);
+    outputString += dataRef.bg_page 
 
-    const area = document.createElement('textarea')
-    document.body.appendChild(area)
-    area.value = outputString
-   // area.focus()
-    area.select()
-    const result = document.execCommand('copy')
-    document.body.removeChild(area)
-    if (!result) {
-      throw new Error()
-    }
-    console.log('Copied with document.execCommand')
-    
+
+
+    //copy to clipboard
   };
 
   const onExportStylesheet = () => {
     console.log("user wants to export this stylesheet to a .scss file");
-    let outputString = "";
-    outputString += "--color-page-bg: " + dataRef.bg_page + "\n";
-    outputString += "--color-bg-primary: " + dataRef.bg_primary  + "\n";
-    outputString += "--color-bg-secondary: " + dataRef.bg_secondary + "\n";
-    outputString += "--background-page-header: " + dataRef.bg_page_header + "\n";
-    outputString += "--background-button-primary: " + dataRef.bg_button_primary + "\n";
-    outputString += "--color-text-primary: " + dataRef.text_primary + "\n";
-    outputString += "--color-text-secondary: " + dataRef.text_secondary+ "\n";
-    outputString += "--color-text-highlight: " + dataRef.text_highlight + "\n";
-    const element = document.createElement("a");
-    const file = new Blob([outputString],{
-      type: "text/plain;charset=utf-8",
-    });
-    element.href = URL.createObjectURL(file);
-    element.download = "myDesign.scss";
-    document.body.appendChild(element);
-    element.click(); 
     //create and export to local .scss file
   }
 
@@ -131,7 +97,7 @@ function App() {
     return(
         <div className="stylesheet">
           <div className="toolbar">
-          <img src={Copy} className = "icon" onClick = {() => onCopy()}/>
+          <img src={Copy} className = "icon" onClick = {(e) => onCopy(e)}/>
           <img src={ExportIcon} className = "icon" onClick = {onExportStylesheet}/>
           </div>
           <div className = "spacer"/>
