@@ -1,0 +1,177 @@
+:root {
+  --color-bg: #616161;
+  --color-bg-hover: var(--figma-color-bg-hover);
+  --color-bg-active: var(--figma-color-bg-pressed);
+  --color-border: var(--figma-color-border);
+  --color-border-focus: var(--figma-color-border-selected);
+  --color-icon: var(--figma-color-icon);
+  --color-text: var(--figma-color-text);
+  --color-bg-brand: var(--figma-color-bg-brand);
+  --color-bg-brand-hover: var(--figma-color-bg-brand-hover);
+  --color-bg-brand-active: var(--figma-color-bg-brand-pressed);
+  --color-border-brand: var(--figma-color-border-brand);
+  --color-border-brand-focus: var(--figma-color-border-selected-strong);
+  --color-text-brand: var(--figma-color-text-onbrand);
+}
+
+html,
+body,
+main {
+  height: 100%;
+}
+
+body,
+input,
+button {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 1rem;
+  text-align: center;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  margin: 0;
+}
+
+button {
+  border-radius: 0.25rem;
+  background: var(--color-bg);
+  color: var(--color-text);
+  cursor: pointer;
+  border: 1px solid var(--color-border);
+  padding: 0.5rem 1rem;
+}
+button:hover {
+  background-color: var(--color-bg-hover);
+}
+button:active {
+  background-color: var(--color-bg-active);
+}
+button:focus-visible {
+  border: none;
+  outline-color: var(--color-border-focus);
+}
+button.brand {
+/*  background-image: linear-gradient(to right,#6c757d, #007bff);*/
+  --color-bg: #AE56E4; 
+  --color-text: var(--color-text-brand);
+  --color-bg-hover: #840FCB;
+  --color-bg-active: #840FCB;
+  --color-border: transparent;
+  --color-border-focus: var(--color-border-brand-focus);
+  width: 160px;
+}
+
+button.tool {
+  /*  background-image: linear-gradient(to right,#6c757d, #007bff);*/
+    --color-bg: #616161; 
+    --color-text: var(--color-text-brand);
+    --color-bg-hover: #414141;
+    --color-bg-active: #840FCB;
+    --color-border: transparent;
+    --color-border-focus: var(--color-border-brand-focus);
+    width: 220px;
+  }
+
+input {
+  background: 1px solid var(--color-bg);
+  border: 1px solid var(--color-border);
+  color: 1px solid var(--color-text);
+  padding: 0.5rem;
+}
+
+input:focus-visible {
+  border-color: var(--color-border-focus);
+  outline-color: var(--color-border-focus);
+}
+
+svg {
+  stroke: var(--color-icon, rgba(0, 0, 0, 0.9));
+}
+
+main {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+section {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+section > * + * {
+  margin-top: 0.5rem;
+}
+footer > * + * {
+  margin-left: 0.5rem;
+}
+
+   
+
+img {
+  height: auto;
+  width: auto;
+  object-position: 0px 0px;
+}
+
+.logoContainer {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 300px;
+}
+
+.spacer {
+  height: 10px;
+}
+
+.spacer1 {
+  height: 65px;
+}
+
+p {
+  padding-left: 10px;
+  color: #141f3e;
+  font-size: 23px;
+}
+
+div.stylesheet {
+  background: #EEEDED;
+  height: 1000%;
+  text-align:left;
+  display: flex;
+  flex-direction: column;
+
+}
+
+img.icon {
+  height: 100%;
+  width: auto;
+  padding-left: 20px;
+  padding-top: 10px;
+  align-items:left
+}
+
+div.toolbar {
+  background-color: #616161;
+  height: 17%;
+  display: flex;
+  flex-direction: row;
+  z-index: 10000;
+  position: fixed;
+  top: 0px;
+  width: 100%;
+}
+
+#rightbutton {
+ position: absolute;
+ right: 0px;
+ height: 100%;
+}
