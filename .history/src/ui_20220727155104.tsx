@@ -43,7 +43,6 @@ function App() {
     temp += "--border-background-card: " + data.border_color + ";\n";
     temp += "--border-background-feature-card-selected: " + data.border_color + ";\n";
     temp += "--border-width-card: " + data.border_width + ";\n";
-    temp += "--border-width-feature-card: " + data.border_width + ";\n";
     temp += "--background-card: var(--color-bg-primary);\n"
     temp += "--color-background-highlight: var(--color-bg-primary);\n";
     temp += " }";
@@ -168,7 +167,6 @@ function App() {
             <p>&ensp;--border-background-feature-card-selected:<b className="afterColon">{dataRef.border_color};</b></p>
             <p>&ensp;--border-width-card:<b className="afterColon">{dataRef.border_width};</b></p>
             <p>&ensp;--border-width-feature-card:<b className="afterColon">{dataRef.border_width};</b></p>
-            <p>&ensp;--background-card:<b className="afterColon">var(--color-bg-primary);</b></p>
             <p>&ensp;--color-background-highlight: <b className="afterColon">var(--color-bg-primary);</b></p>
             <p className = "wrap">&#125;</p>
           </div>

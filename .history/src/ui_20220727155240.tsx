@@ -168,7 +168,8 @@ function App() {
             <p>&ensp;--border-background-feature-card-selected:<b className="afterColon">{dataRef.border_color};</b></p>
             <p>&ensp;--border-width-card:<b className="afterColon">{dataRef.border_width};</b></p>
             <p>&ensp;--border-width-feature-card:<b className="afterColon">{dataRef.border_width};</b></p>
-            <p>&ensp;--background-card:<b className="afterColon">var(--color-bg-primary);</b></p>
+            temp += "--background-card: var(--color-bg-primary);\n"
+            <p>&ensp;--background-card:<b className="afterColon">{dataRef.border_width};</b></p>
             <p>&ensp;--color-background-highlight: <b className="afterColon">var(--color-bg-primary);</b></p>
             <p className = "wrap">&#125;</p>
           </div>

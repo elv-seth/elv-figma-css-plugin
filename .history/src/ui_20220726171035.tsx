@@ -22,9 +22,7 @@ function App() {
     bg_button_primary :"",
     text_primary : "",
     text_secondary : "",
-    text_highlight : "",
-    border_color: "",
-    border_width: ""
+    text_highlight : ""
   });
   const [codeString,setCodeString] = useState("");
 
@@ -40,12 +38,6 @@ function App() {
     temp += "--color-text-primary: " + data.text_primary + ";\n";
     temp += "--color-text-secondary: " + data.text_secondary+ ";\n";
     temp += "--color-text-highlight: " + data.text_highlight + ";\n";
-    temp += "--border-background-card: " + data.border_color + ";\n";
-    temp += "--border-background-feature-card-selected: " + data.border_color + ";\n";
-    temp += "--border-width-card: " + data.border_width + ";\n";
-    temp += "--border-width-feature-card: " + data.border_width + ";\n";
-    temp += "--background-card: var(--color-bg-primary);\n"
-    temp += "--color-background-highlight: var(--color-bg-primary);\n";
     temp += " }";
     setCodeString(temp);
    }
@@ -60,7 +52,8 @@ function App() {
 
 
   const onCopy = () => {
-    //copy to clipboard
+        //copy to clipboard
+
     const area = document.createElement('textarea')
     document.body.appendChild(area)
     area.value = codeString;
@@ -74,15 +67,24 @@ function App() {
   };
 
   const onExportStylesheet = () => {
-    //exports to local .scss file
+    let outputString = "";
+    outputString += "--color-page-bg: " + dataRef.bg_page + ";\n";
+    outputString += "--color-bg-primary: " + dataRef.bg_primary  + ";\n";
+    outputString += "--color-bg-secondary: " + dataRef.bg_secondary + "\n";
+    outputString += "--background-page-header: " + dataRef.bg_page_header + "\n";
+    outputString += "--background-button-primary: " + dataRef.bg_button_primary + "\n";
+    outputString += "--color-text-primary: " + dataRef.text_primary + "\n";
+    outputString += "--color-text-secondary: " + dataRef.text_secondary+ "\n";
+    outputString += "--color-text-highlight: " + dataRef.text_highlight + "\n";
     const element = document.createElement("a");
-    const file = new Blob([codeString],{
+    const file = new Blob([outputString],{
       type: "text/plain;charset=utf-8",
     });
     element.href = URL.createObjectURL(file);
     element.download = "myDesign.scss";
     document.body.appendChild(element);
     element.click(); 
+    //create and export to local .scss file
   }
 
   const onBack = () => {
@@ -164,12 +166,7 @@ function App() {
             <p>&ensp;--color-text-primary:<b className="afterColon">{dataRef.text_primary};</b></p>
             <p>&ensp;--color-text-secondary:<b className="afterColon">{dataRef.text_secondary};</b></p>
             <p>&ensp;--color-text-highlight:<b className="afterColon">{dataRef.text_highlight};</b></p>
-            <p>&ensp;--border-background-card:<b className="afterColon">{dataRef.border_color};</b></p>
-            <p>&ensp;--border-background-feature-card-selected:<b className="afterColon">{dataRef.border_color};</b></p>
-            <p>&ensp;--border-width-card:<b className="afterColon">{dataRef.border_width};</b></p>
-            <p>&ensp;--border-width-feature-card:<b className="afterColon">{dataRef.border_width};</b></p>
-            <p>&ensp;--background-card:<b className="afterColon">var(--color-bg-primary);</b></p>
-            <p>&ensp;--color-background-highlight: <b className="afterColon">var(--color-bg-primary);</b></p>
+            <p>&ensp;--background-card: <b className="afterColon">var(color-bg-primary);</b></p>
             <p className = "wrap">&#125;</p>
           </div>
   

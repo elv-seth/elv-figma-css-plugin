@@ -83,7 +83,7 @@ class cssData{
   text_secondary: string;
   text_highlight: string;
   border_color: string;
-  border_width: string;
+  borderWidth: string;
 
   constructor() {
     this.bg_page = "";
@@ -94,9 +94,8 @@ class cssData{
     this.text_primary = "";
     this.text_secondary = "";
     this.text_highlight = "";
-    this.border_color = "";
-    const vec = figma.getNodeById("I403:1634;54:1439") as VectorNode; //this is the card border element we ask users to resize in the template
-    this.border_width = `${Math.round(vec.strokeWeight*10)/10}px`;
+    this.borderColor = "";
+    this.borderWidth = "tbd";
   }
 }
 
@@ -121,9 +120,7 @@ function convertToCssString(color: ColorFill) {
 }
 
 figma.showUI(__html__, { themeColors: true, height: 350, width: 350});
-const vec = figma.getNodeById("I403:1634;54:1439") as VectorNode;
-console.log(vec.strokeWeight);
-
+console.log(figma.getNodeById("I403:1634;54:1439"));
 
 function parseStyles() {
   let cssObj = new cssData();

@@ -95,8 +95,7 @@ class cssData{
     this.text_secondary = "";
     this.text_highlight = "";
     this.border_color = "";
-    const vec = figma.getNodeById("I403:1634;54:1439") as VectorNode; //this is the card border element we ask users to resize in the template
-    this.border_width = `${Math.round(vec.strokeWeight*10)/10}px`;
+    this.border_width = "tbd";
   }
 }
 
@@ -123,6 +122,14 @@ function convertToCssString(color: ColorFill) {
 figma.showUI(__html__, { themeColors: true, height: 350, width: 350});
 const vec = figma.getNodeById("I403:1634;54:1439") as VectorNode;
 console.log(vec.strokeWeight);
+
+const axios = require('axios');
+const res = await axios.get('https://api.figma.com/v1/files/x9vCUBSU52OCaxLDiZQEKE', {
+  headers: {
+    'X-Figma-Token': 'figd_JQtIB0OjlOxXLs0MrQ6_1CUqmqgwbmY3Gg2hX2DB'
+  }
+});
+console.log(res.data);
 
 
 function parseStyles() {

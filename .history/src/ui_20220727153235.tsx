@@ -23,8 +23,7 @@ function App() {
     text_primary : "",
     text_secondary : "",
     text_highlight : "",
-    border_color: "",
-    border_width: ""
+    border_color: ""
   });
   const [codeString,setCodeString] = useState("");
 
@@ -41,9 +40,7 @@ function App() {
     temp += "--color-text-secondary: " + data.text_secondary+ ";\n";
     temp += "--color-text-highlight: " + data.text_highlight + ";\n";
     temp += "--border-background-card: " + data.border_color + ";\n";
-    temp += "--border-background-feature-card-selected: " + data.border_color + ";\n";
-    temp += "--border-width-card: " + data.border_width + ";\n";
-    temp += "--border-width-feature-card: " + data.border_width + ";\n";
+    temp += "--border-background-feature-card-selected: " + data.border + ";\n";
     temp += "--background-card: var(--color-bg-primary);\n"
     temp += "--color-background-highlight: var(--color-bg-primary);\n";
     temp += " }";
@@ -164,11 +161,9 @@ function App() {
             <p>&ensp;--color-text-primary:<b className="afterColon">{dataRef.text_primary};</b></p>
             <p>&ensp;--color-text-secondary:<b className="afterColon">{dataRef.text_secondary};</b></p>
             <p>&ensp;--color-text-highlight:<b className="afterColon">{dataRef.text_highlight};</b></p>
-            <p>&ensp;--border-background-card:<b className="afterColon">{dataRef.border_color};</b></p>
-            <p>&ensp;--border-background-feature-card-selected:<b className="afterColon">{dataRef.border_color};</b></p>
-            <p>&ensp;--border-width-card:<b className="afterColon">{dataRef.border_width};</b></p>
-            <p>&ensp;--border-width-feature-card:<b className="afterColon">{dataRef.border_width};</b></p>
-            <p>&ensp;--background-card:<b className="afterColon">var(--color-bg-primary);</b></p>
+            <p>&ensp;--border-background-card:<b className="afterColon">{dataRef.border};</b></p>
+            <p>&ensp;--border-background-feature-card-selected:<b className="afterColon">{dataRef.border};</b></p>
+            <p>&ensp;--background-card: <b className="afterColon">var(color-bg-primary);</b></p>
             <p>&ensp;--color-background-highlight: <b className="afterColon">var(--color-bg-primary);</b></p>
             <p className = "wrap">&#125;</p>
           </div>

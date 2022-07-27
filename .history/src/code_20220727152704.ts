@@ -82,8 +82,7 @@ class cssData{
   text_primary: string;
   text_secondary: string;
   text_highlight: string;
-  border_color: string;
-  border_width: string;
+  border: string;
 
   constructor() {
     this.bg_page = "";
@@ -94,9 +93,7 @@ class cssData{
     this.text_primary = "";
     this.text_secondary = "";
     this.text_highlight = "";
-    this.border_color = "";
-    const vec = figma.getNodeById("I403:1634;54:1439") as VectorNode; //this is the card border element we ask users to resize in the template
-    this.border_width = `${Math.round(vec.strokeWeight*10)/10}px`;
+    this.border = "";
   }
 }
 
@@ -121,9 +118,7 @@ function convertToCssString(color: ColorFill) {
 }
 
 figma.showUI(__html__, { themeColors: true, height: 350, width: 350});
-const vec = figma.getNodeById("I403:1634;54:1439") as VectorNode;
-console.log(vec.strokeWeight);
-
+console.log(figma.getNodeById(""))
 
 function parseStyles() {
   let cssObj = new cssData();
@@ -155,7 +150,7 @@ function parseStyles() {
         cssObj.text_highlight = convertToCssString(new ColorFill(style.paints[0]));
         break;
       case "card-border":
-        cssObj.border_color = convertToCssString(new ColorFill(style.paints[0]));
+        cssObj.border = convertToCssString(new ColorFill(style.paints[0]));
         break;
       default:
         //do nothing, we don't care about these styles
