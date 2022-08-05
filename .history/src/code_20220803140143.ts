@@ -1,6 +1,4 @@
 import { extractLinearGradientParamsFromTransform } from "@figma-plugin/helpers";
-import { toSolidPaint } from 'figx';
-
 
 class Color{
   r: number;
@@ -84,7 +82,6 @@ class cssData{
   text_primary: string;
   text_secondary: string;
   text_highlight: string;
-  text_button: string;
   border_color: string;
   border_width: string;
 
@@ -135,15 +132,12 @@ function parseStyles() {
     switch(style.name) {
       case "bg-page":
         cssObj.bg_page = convertToCssString(new ColorFill(style.paints[0]));
-        console.log("style",style.paints[0]);
         break;
       case "bg-primary":
         cssObj.bg_primary = convertToCssString(new ColorFill(style.paints[0]));
-        console.log("style",style.paints[0]);
         break;
       case "bg-secondary":
         cssObj.bg_secondary = convertToCssString(new ColorFill(style.paints[0]));
-        console.log("style",style.paints[0]);
         break;
       case "bg-page-header":
         cssObj.bg_page_header = convertToCssString(new ColorFill(style.paints[0]));
@@ -159,9 +153,6 @@ function parseStyles() {
           break;
       case "text-highlight":
         cssObj.text_highlight = convertToCssString(new ColorFill(style.paints[0]));
-        break;
-      case "text-button":
-        cssObj.text_button = convertToCssString(new ColorFill(style.paints[0]));
         break;
       case "card-border":
         cssObj.border_color = convertToCssString(new ColorFill(style.paints[0]));
@@ -195,128 +186,10 @@ figma.ui.onmessage = (msg) => {
   }
 
   if (msg.type === "setToDark") {
-    console.log("setToDark")
-    let defaultDarkStyles = {
-      bg_page: '#000000',
-      bg_primary: '#090909',
-      bg_secondary:'#242424',
-      bg_page_header:'#090909',
-      bg_button_primary: '#1E1EED',
-      text_primary:'#FFFFFF',
-      text_secondary:'#E8E8E8',
-      text_highlight:'#9AC0F3',
-      text_button:'#FFFFFF',
-      card_border:'#444444'
-    }
-    var paint 
-    for (const style of figma.getLocalPaintStyles()) {
-      switch(style.name) {
-        case "bg-page":
-          paint = toSolidPaint(defaultDarkStyles.bg_page)
-          style.paints = [paint]
-          break;
-        case "bg-primary":
-          paint = toSolidPaint(defaultDarkStyles.bg_primary)
-          style.paints = [paint]
-          break;
-        case "bg-secondary":
-          paint = toSolidPaint(defaultDarkStyles.bg_secondary)
-          style.paints = [paint]
-          break;
-        case "bg-page-header":
-          paint = toSolidPaint(defaultDarkStyles.bg_page_header)
-          style.paints = [paint]
-          break;
-        case "bg-button-primary":
-          paint = toSolidPaint(defaultDarkStyles.bg_button_primary)
-          style.paints = [paint]
-            break;
-        case "text-primary":
-          paint = toSolidPaint(defaultDarkStyles.text_primary)
-          style.paints = [paint]
-          break;
-        case "text-secondary":
-          paint = toSolidPaint(defaultDarkStyles.text_secondary)
-          style.paints = [paint]
-            break;
-        case "text-highlight":
-          paint = toSolidPaint(defaultDarkStyles.text_highlight)
-          style.paints = [paint]
-          break;
-        case "text-button":
-          paint = toSolidPaint(defaultDarkStyles.text_button)
-          style.paints = [paint]
-          break;
-        case "card-border":
-          paint = toSolidPaint(defaultDarkStyles.card_border)
-          style.paints = [paint]
-          break;
-        default:
-          //do nothing, we don't care about these styles
-      }
-    }
+
   } 
 
   if (msg.type === "setToLight") {
-    let defaultLightStyles = {
-      bg_page: '#F6F6F6',
-      bg_primary: '#FFFFFF',
-      bg_secondary:'#EDEDED',
-      bg_page_header:'#EEEEEE',
-      bg_button_primary: '#1E1EED',
-      text_primary:'#000000',
-      text_secondary:'#777777',
-      text_highlight:'#2D61E4',
-      text_button:'#FFFFFF',
-      card_border:'#cccccc'
-    }
-    console.log("setToLight")
-    var paint 
-    for (const style of figma.getLocalPaintStyles()) {
-      switch(style.name) {
-        case "bg-page":
-          paint = toSolidPaint(defaultLightStyles.bg_page)
-          style.paints = [paint]
-          break;
-        case "bg-primary":
-          paint = toSolidPaint(defaultLightStyles.bg_primary)
-          style.paints = [paint]
-          break;
-        case "bg-secondary":
-          paint = toSolidPaint(defaultLightStyles.bg_secondary)
-          style.paints = [paint]
-          break;
-        case "bg-page-header":
-          paint = toSolidPaint(defaultLightStyles.bg_page_header)
-          style.paints = [paint]
-          break;
-        case "bg-button-primary":
-          paint = toSolidPaint(defaultLightStyles.bg_button_primary)
-          style.paints = [paint]
-            break;
-        case "text-primary":
-          paint = toSolidPaint(defaultLightStyles.text_primary)
-          style.paints = [paint]
-          break;
-        case "text-secondary":
-          paint = toSolidPaint(defaultLightStyles.text_secondary)
-          style.paints = [paint]
-            break;
-        case "text-highlight":
-          paint = toSolidPaint(defaultLightStyles.text_highlight)
-          style.paints = [paint]
-          break;
-        case "text-button":
-          paint = toSolidPaint(defaultLightStyles.text_button)
-          style.paints = [paint]
-          break;
-        case "card-border":
-          paint = toSolidPaint(defaultLightStyles.card_border)
-          style.paints = [paint]
-          break;
-        default:
-          //do nothing, we don't care about these styles
-      }
-    }
+    
   }
 };

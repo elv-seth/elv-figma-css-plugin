@@ -196,79 +196,21 @@ figma.ui.onmessage = (msg) => {
 
   if (msg.type === "setToDark") {
     console.log("setToDark")
-    let defaultDarkStyles = {
-      bg_page: '#000000',
-      bg_primary: '#090909',
-      bg_secondary:'#242424',
-      bg_page_header:'#090909',
-      bg_button_primary: '#1E1EED',
-      text_primary:'#FFFFFF',
-      text_secondary:'#E8E8E8',
-      text_highlight:'#9AC0F3',
-      text_button:'#FFFFFF',
-      card_border:'#444444'
-    }
-    var paint 
-    for (const style of figma.getLocalPaintStyles()) {
-      switch(style.name) {
-        case "bg-page":
-          paint = toSolidPaint(defaultDarkStyles.bg_page)
-          style.paints = [paint]
-          break;
-        case "bg-primary":
-          paint = toSolidPaint(defaultDarkStyles.bg_primary)
-          style.paints = [paint]
-          break;
-        case "bg-secondary":
-          paint = toSolidPaint(defaultDarkStyles.bg_secondary)
-          style.paints = [paint]
-          break;
-        case "bg-page-header":
-          paint = toSolidPaint(defaultDarkStyles.bg_page_header)
-          style.paints = [paint]
-          break;
-        case "bg-button-primary":
-          paint = toSolidPaint(defaultDarkStyles.bg_button_primary)
-          style.paints = [paint]
-            break;
-        case "text-primary":
-          paint = toSolidPaint(defaultDarkStyles.text_primary)
-          style.paints = [paint]
-          break;
-        case "text-secondary":
-          paint = toSolidPaint(defaultDarkStyles.text_secondary)
-          style.paints = [paint]
-            break;
-        case "text-highlight":
-          paint = toSolidPaint(defaultDarkStyles.text_highlight)
-          style.paints = [paint]
-          break;
-        case "text-button":
-          paint = toSolidPaint(defaultDarkStyles.text_button)
-          style.paints = [paint]
-          break;
-        case "card-border":
-          paint = toSolidPaint(defaultDarkStyles.card_border)
-          style.paints = [paint]
-          break;
-        default:
-          //do nothing, we don't care about these styles
-      }
-    }
+
   } 
 
   if (msg.type === "setToLight") {
     let defaultLightStyles = {
       bg_page: '#F6F6F6',
-      bg_primary: '#FFFFFF',
+      bg_primary: '#D2D2D2',
       bg_secondary:'#EDEDED',
-      bg_page_header:'#EEEEEE',
-      bg_button_primary: '#1E1EED',
-      text_primary:'#000000',
-      text_secondary:'#777777',
-      text_highlight:'#2D61E4',
-      text_button:'#FFFFFF',
-      card_border:'#cccccc'
+      bg_page_header:'#D2D2D2',
+      bg_button_primary: '#1A65D6',
+      text_primary:,
+      text_secondary:,
+      text_highlight:,
+      text_button:,
+      card_border:'#D2D2D2'
     }
     console.log("setToLight")
     var paint 
@@ -303,11 +245,11 @@ figma.ui.onmessage = (msg) => {
           style.paints = [paint]
             break;
         case "text-highlight":
-          paint = toSolidPaint(defaultLightStyles.text_highlight)
+          paint = toSolidPaint(defaultLightStyles.bg_page)
           style.paints = [paint]
           break;
         case "text-button":
-          paint = toSolidPaint(defaultLightStyles.text_button)
+          paint = toSolidPaint(defaultLightStyles.bg_page)
           style.paints = [paint]
           break;
         case "card-border":

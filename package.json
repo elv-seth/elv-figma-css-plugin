@@ -33,6 +33,7 @@
     "@types/react-dom": "^17.0.9",
     "babel-loader": "^8.2.5",
     "elv-components-js": "git+https://github.com/eluv-io/elv-components-js.git#media-apps",
+    "figx": "^0.1.0",
     "prismjs": "^1.28.0",
     "react": "^17.0.2",
     "react-dev-utils": "^11.0.4",

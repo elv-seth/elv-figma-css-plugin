@@ -23,7 +23,6 @@ function App() {
     text_primary : "",
     text_secondary : "",
     text_highlight : "",
-    text_button: "",
     border_color: "",
     border_width: ""
   });
@@ -41,7 +40,6 @@ function App() {
     temp += "--color-text-primary: " + data.text_primary + ";\n";
     temp += "--color-text-secondary: " + data.text_secondary+ ";\n";
     temp += "--color-text-highlight: " + data.text_highlight + ";\n";
-    temp += "--color-button-primary-text: " + data.text_button + ";\n";
     temp += "--border-background-card: " + data.border_color + ";\n";
     temp += "--border-background-feature-card-selected: " + data.border_color + ";\n";
     temp += "--border-width-card: " + data.border_width + ";\n";
@@ -181,7 +179,6 @@ function App() {
             <p>&ensp;--color-text-primary:<b className="afterColon">{dataRef.text_primary};</b></p>
             <p>&ensp;--color-text-secondary:<b className="afterColon">{dataRef.text_secondary};</b></p>
             <p>&ensp;--color-text-highlight:<b className="afterColon">{dataRef.text_highlight};</b></p>
-            <p>&ensp;--color-button-primary-text:<b className="afterColon">{dataRef.text_button};</b></p>
             <p>&ensp;--border-background-card:<b className="afterColon">{dataRef.border_color};</b></p>
             <p>&ensp;--border-background-feature-card-selected:<b className="afterColon">{dataRef.border_color};</b></p>
             <p>&ensp;--border-width-card:<b className="afterColon">{dataRef.border_width};</b></p>

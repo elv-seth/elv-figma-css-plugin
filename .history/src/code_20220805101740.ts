@@ -205,7 +205,7 @@ figma.ui.onmessage = (msg) => {
       text_primary:'#FFFFFF',
       text_secondary:'#E8E8E8',
       text_highlight:'#9AC0F3',
-      text_button:'#FFFFFF',
+      text_button:'#FFFFF',
       card_border:'#444444'
     }
     var paint 

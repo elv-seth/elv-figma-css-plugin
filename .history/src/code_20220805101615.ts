@@ -203,10 +203,10 @@ figma.ui.onmessage = (msg) => {
       bg_page_header:'#090909',
       bg_button_primary: '#1E1EED',
       text_primary:'#FFFFFF',
-      text_secondary:'#E8E8E8',
-      text_highlight:'#9AC0F3',
-      text_button:'#FFFFFF',
-      card_border:'#444444'
+      text_secondary:'#FAFAFA',
+      text_highlight:'#FAFAFA',
+      text_button:'#6B8BE5',
+      card_border:'#2D2D2D'
     }
     var paint 
     for (const style of figma.getLocalPaintStyles()) {

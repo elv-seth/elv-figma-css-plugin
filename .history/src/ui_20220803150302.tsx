@@ -181,7 +181,6 @@ function App() {
             <p>&ensp;--color-text-primary:<b className="afterColon">{dataRef.text_primary};</b></p>
             <p>&ensp;--color-text-secondary:<b className="afterColon">{dataRef.text_secondary};</b></p>
             <p>&ensp;--color-text-highlight:<b className="afterColon">{dataRef.text_highlight};</b></p>
-            <p>&ensp;--color-button-primary-text:<b className="afterColon">{dataRef.text_button};</b></p>
             <p>&ensp;--border-background-card:<b className="afterColon">{dataRef.border_color};</b></p>
             <p>&ensp;--border-background-feature-card-selected:<b className="afterColon">{dataRef.border_color};</b></p>
             <p>&ensp;--border-width-card:<b className="afterColon">{dataRef.border_width};</b></p>
